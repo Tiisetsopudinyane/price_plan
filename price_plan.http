@@ -1,0 +1,38 @@
+POST http://localhost:4011/api/phonebill
+content-type: application/json
+
+{
+    "plan_name": "sms 101",
+    "action":"sms,call,sms,call,call"
+}
+
+###
+
+POST http://localhost:4011/api/price_plan/delete
+content-type:application/json
+
+{
+    "id":20
+}
+
+###
+
+POST http://localhost:4011/api/phonebill/create
+content-type:application/json
+
+{
+  "plan_name":"Amo",
+  "sms_price":"5.50",
+  "call_price":"9.90"
+}
+
+###
+POST http://localhost:4011/api/phonebill/update
+content-type: application/json
+
+{
+"plan_name":"Amogelang",
+"sms_price":"3.39",
+"call_price":"5.89",
+"id":22
+}
