@@ -24,8 +24,9 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "npm start",
-    "test": "nodemon index.js"
+    "dev": "nodemon",
+    "test": "",
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
