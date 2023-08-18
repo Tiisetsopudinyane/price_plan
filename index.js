@@ -27,6 +27,20 @@ app.post(`/api/phonebill`,async function (req, res){
         price_Plan
     })
  })
+
+ app.get('/api/phonebill/SearchByName',async function (req,res){
+    const plan_name=req.body.plan_name;
+    const getSmsCall=await getPrice_planByPlan_name(plan_name) 
+    const sms_price=getSmsCall[0].sms_price;
+    const call_price=getSmsCall[0].call_price;
+    const action=req.body.action;
+    const total=totalPhoneBill(action,sms_price,call_price)
+    res.json({
+        'status':"success",
+        total
+    })
+ })
+
  app.post('/api/price_plan/delete',async function(req,res){
   const id=req.body.id;
    await deleteById(id);

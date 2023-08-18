@@ -9,22 +9,25 @@
   </head>
   <body>
     <div x-data="{
-      title:'Malva',
+      pricePlan:'Phone Bill',
       myPrice_plan:[],
       init(){
         return axios
         .get('https://price-plan-3cje.onrender.com/api/phonebill').then((result)=>{
           console.log(result.data)
-          this.myPrice_plan=result.data.price_plan;
-        })
-            
-        
+          this.myPrice_plan=result.data.price_Plan;
+        }) 
+    },
+
+    bill(){
+      return axios.get('https://price-plan-3cje.onrender.com/api/phonebill')
     }
     }"
     >
+    <div> 
+      <h1 x-text="pricePlan"></h1>
+    </div>
 <br>
-<p x-text="title"></p>
-<h1 x-text="100"></h1>
       <table>
         <tr>
           <th>ID</th>
@@ -47,8 +50,10 @@
       <hr>
       <div>
         <div>
-          <p> please </p>
-          <input >
+          <p>Serch price plan by name</p>
+          <input placeholder="plan_name">
+          <button>Search</button>
+          <p x-text=""></p>
         </div>
       </div>
     </div>

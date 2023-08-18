@@ -19,9 +19,10 @@ export async function deleteById(id){
 }
 
 export async function getPrice_plan(){
-    const getPrice=await db.all(`select * from price_plan`);
+    const getPrice=await db.all(`select * from price_plan limit 5`);
     return getPrice;
 }
+
 
 export async function getPrice_planByPlan_name(Plan_name){
     const sql=`select * from price_plan where plan_name=?`;
