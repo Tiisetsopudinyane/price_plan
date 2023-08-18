@@ -33,7 +33,7 @@ app.post(`/api/phonebill`,async function (req, res){
     const getSmsCall=await getPrice_planByPlan_name(plan_name) 
     const sms_price=getSmsCall[0].sms_price;
     const call_price=getSmsCall[0].call_price;
-    const action=req.body.action;
+    const action=req.query.action;
     const total=totalPhoneBill(action,sms_price,call_price)
     res.json({
         'status':"success",
