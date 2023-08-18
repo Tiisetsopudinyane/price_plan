@@ -37,3 +37,6 @@ content-type: application/json
 "call_price":"5.89",
 "id":22
 }
+
+###
+GET https://price-plan-3cje.onrender.com/api/phonebill

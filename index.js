@@ -1,15 +1,12 @@
 import express from 'express';
 import totalPhoneBill from './phoneBill.js';
-import {getPrice_planByPlan_name,deleteById,create,UpdatePriceById} from "./db.js";
+import {getPrice_planByPlan_name,deleteById,create,UpdatePriceById,getPrice_plan} from "./db.js";
 
 const app = express(); 
 app.use(express.static('public'))
 app.use(express.json())
-
-// const getSmsCall= await getPrice_planByPlan_name("call 101")
-// console.log(getSmsCall);
-// console.log(getSmsCall[0].sms_price)
-// console.log(getSmsCall[0].call_price)
+// const price_Plan=await getPrice_plan()
+// console.log(price_Plan);
 app.post(`/api/phonebill`,async function (req, res){
     const plan_name=req.body.plan_name;
     const getSmsCall=await getPrice_planByPlan_name(plan_name) 
@@ -22,14 +19,12 @@ app.post(`/api/phonebill`,async function (req, res){
         total
     })
  })
-//  app.get('/api/phonebill',function (req,res){
-//     const price_Plan=req.query.Price_Plan;
-//     const action=req.query.action;
-//     res.json({
-//         "Price_pplan":price_Plan,
-//         "total":totalPhoneBill(`${action}`)
-//     })
-//  })
+ app.get('/api/phonebill',async function (req,res){
+    const price_Plan=await getPrice_plan()
+    res.json({
+        price_Plan
+    })
+ })
  app.post('/api/price_plan/delete',async function(req,res){
   const id=req.body.id;
    await deleteById(id);
