@@ -28,7 +28,7 @@ app.post(`/api/phonebill`,async function (req, res){
     })
  })
 
- app.get('/api/phonebill/SearchByName',async function (req,res){
+ app.get('/api/phonebill',async function (req,res){
     const plan_name=req.body.plan_name;
     const getSmsCall=await getPrice_planByPlan_name(plan_name) 
     const sms_price=getSmsCall[0].sms_price;
