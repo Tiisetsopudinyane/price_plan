@@ -25,7 +25,7 @@
 
     bill(){
       return axios
-      .get('https://price-plan-3cje.onrender.com/api/phonebill?plan_name=${this.plan_name}$action=${this.action}')
+      .get(`https://price-plan-3cje.onrender.com/api/phonebill?plan_name=${this.plan_name}&action=${this.action}`)
       .then((result)=>{
         console.log(result.data.total)
         this.total=result.data.total;
