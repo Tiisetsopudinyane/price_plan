@@ -11,16 +11,25 @@
     <div x-data="{
       pricePlan:'Phone Bill',
       myPrice_plan:[],
+      plan_name:'',
+      action:'',
+      total:0,
       init(){
         return axios
-        .get('https://price-plan-3cje.onrender.com/api/phonebill').then((result)=>{
+        .get('https://price-plan-3cje.onrender.com/api/phonebill')
+        .then((result)=>{
           console.log(result.data)
           this.myPrice_plan=result.data.price_Plan;
         }) 
     },
 
     bill(){
-      return axios.get('https://price-plan-3cje.onrender.com/api/phonebill')
+      return axios
+      .get('https://price-plan-3cje.onrender.com/api/phonebill?plan_name=${this.plan_name}$action=${this.action}')
+      .then((result)=>{
+        console.log(result.data.total)
+        this.total=result.data.total;
+      })
     }
     }"
     >
@@ -51,9 +60,10 @@
       <div>
         <div>
           <p>Serch price plan by name</p>
-          <input placeholder="plan_name">
-          <button>Search</button>
-          <p x-text=""></p>
+          <input x-model="plan_name" placeholder="plan_name">
+          <input x-model="action" placeholder="sms,call,sms,call">
+          <button x-on:click="bill">Search</button>
+          <p x-text="total"></p>
         </div>
       </div>
     </div>

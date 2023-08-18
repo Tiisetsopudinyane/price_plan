@@ -42,4 +42,3 @@ content-type: application/json
 GET https://price-plan-3cje.onrender.com/api/phonebill
 
 ###
-GET https://price-plan-3cje.onrender.com/api/phonebill?plan_name='sms 101'&action=sms,call,sms
