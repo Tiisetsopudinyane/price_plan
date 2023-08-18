@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js" defer></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     
   </head>
   <body>
     <div x-data="{
       title:'Malva',
       myPrice_plan:[],
-      getdata(){
+      init(){
         return axios
-        .get('http://localhost:4011/api/phonebill')
-        .then((result)=>{
-            console.log(result.data.price_plan)
-            this.myPrice_plan=result.data.price_plan;
+        .get('https://price-plan-3cje.onrender.com/api/phonebill').then((result)=>{
+          console.log(result.data)
+          this.myPrice_plan=result.data.price_plan;
         })
+            
+        
     }
-    }">
+    }"
+    >
 <br>
 <p x-text="title"></p>
-<h1 x-text="myPrice_plan"></h1>
+<h1 x-text="100"></h1>
       <table>
         <tr>
           <th>ID</th>

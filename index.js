@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import totalPhoneBill from './phoneBill.js';
 import {getPrice_planByPlan_name,deleteById,create,UpdatePriceById,getPrice_plan} from "./db.js";
 
 const app = express(); 
 app.use(express.static('public'))
 app.use(express.json())
+app.use(cors());
 // const price_Plan=await getPrice_plan()
 // console.log(price_Plan);
 app.post(`/api/phonebill`,async function (req, res){
