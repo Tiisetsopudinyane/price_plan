@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(182, 181, 181);
+    color: rgb(19, 19, 19);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+table{
+    width: 80%;
+    margin: auto;
+    padding: auto;
+}
+.box_grid{
+display: block;
+}
+.box{
+    background-color: rgb(59, 59, 59);
+    color: rgb(175, 174, 174);
+    border-radius: .5em;
+    padding: .25em;
+    margin: .75em;
+    flex: 1;
+}
+.box1{
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-radius: .5em .5em 100% .5em;
+    margin: 0;
+    height: 98%;
+    padding: .15em;
+    flex: 1;
+}
+.box2{
+    background-color: rgb(110, 110, 110);
+    color: rgb(255, 255, 255);
+    border-radius: .5em 1em 75% .5em;
+    padding: 0;
+    height: 90%;
+    margin: .5em;
+}
+input{
+    border-color: transparent;
+    padding: .25em;
+    margin: .25em;
+    border-radius: .25em;
+}
+button{
+    border-color: transparent;
+    padding: .25em;
+    margin: .25em;
+    font-weight: bold;
+    border-color: rgb(0, 0, 0);
+    border-radius: .25em;
+}
+button:hover{
+    border-color: rgb(255, 255, 255);
+    padding: .25em;
+    border-radius: .25em;
+    font-weight: bold;
+    color: rgb(243, 242, 242);
+    background-color: rgb(31, 30, 30);
+}
+hr{
+    border-color: black;
+}
+
+@media (min-width:960px) {
+    .box_grid{
+        display:flex;
+        }
+        button{
+            border-color: transparent;
+            padding: .25em;
+            border-color: rgb(0, 0, 0);
+            margin: .25em;
+            font-weight: bold;
+            border-radius: .25em;
+        }
+}
