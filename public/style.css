@@ -3,10 +3,16 @@ body{
     color: rgb(19, 19, 19);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.header{
+    background-color: rgb(190, 190, 190);
+    text-align: center;
+}
 table{
     width: 80%;
     margin: auto;
     padding: auto;
+    background-color: rgb(83, 82, 82);
+    color: rgb(207, 207, 207);
 }
 .box_grid{
 display: block;
@@ -57,6 +63,12 @@ button:hover{
     font-weight: bold;
     color: rgb(243, 242, 242);
     background-color: rgb(31, 30, 30);
+}
+table,th,td{
+    border-spacing: 0px;
+    border-collapse: separate;
+    border: 1px solid rgb(92, 91, 91);
+    text-align: center;
 }
 hr{
     border-color: black;
