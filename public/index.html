@@ -7,12 +7,14 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="/alp.js"></script>
     <link href="style.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body x-data="phoneBill">
     <div
     >
     <div class="header"> 
-      <h1 x-text="pricePlan"></h1>
+      <h1><i class="fa fa-volume-control-phone" aria-hidden="true"></i><span>Phone</span> Bill</h1>
     </div>
      <br>
       <table>
@@ -41,7 +43,7 @@
           <div class="box1">
           <p>DELETE BY ID</p>
           <input x-model="deleteId">
-          <button x-on:click="deletes()">Delete</button>
+          <button x-on:click="deletes()"><i class="fa fa-trash-o" aria-hidden="true">Delete</i></button>
           <p x-text="deleteIdmessage"></p>
           </div>
           </div>
@@ -52,7 +54,7 @@
           <p>CHECK BILL</p>
           <input x-model="plan_name" placeholder="plan_name">
           <input x-model="action" placeholder="sms,call,sms,call">
-          <button x-on:click="bill()">Search</button>
+          <button x-on:click="bill()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
           <p x-text="total"></p>
           </div>
          </div>
@@ -65,7 +67,7 @@
           <input x-model="Createplan_name" placeholder="plan_name">
           <input x-model="Createsms_price" placeholder="sms_price">
           <input x-model="Createcall_price" placeholder="call_price">
-          <button x-on:click="create()">Create</button>
+          <button x-on:click="create()"><i class="fa fa-plus-square" aria-hidden="true">Create</i></button>
           <p x-text="Createmessage"></p>
           </div>
         </div>
@@ -78,7 +80,7 @@
           <input x-model="Updateplan_name" placeholder="plan_name">
           <input x-model="Updatesms_price" placeholder="sms_price">
           <input x-model="Updatecall_price" placeholder="call_price">
-          <button x-on:click="update()">Update</button>
+          <button x-on:click="update()"><i class="fa fa-pencil-square" aria-hidden="true">Update</i></button>
           <p x-text="Updatemessage"></p>
           </div>
         </div>

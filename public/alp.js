@@ -1,7 +1,6 @@
 document.addEventListener("alpine:init", ()=>{
     Alpine.data('phoneBill',()=>{
         return {
-    pricePlan:'Phone Bill',
     myPrice_plan:[],
     plan_name:'',
     action:'',
